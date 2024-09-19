@@ -14,7 +14,11 @@ if 'grid_width' not in st.session_state:
     st.session_state.grid_width = 4
 if 'grid_height' not in st.session_state:
     st.session_state.grid_height = 4
-    
+
+init_data = np.random.rand(st.session_state.grid_height, st.session_state.grid_width)
+df = pd.DataFrame(init_data, columns=[f"{i}" for i in range(st.session_state.grid_width)])
+np.round(df, decimals=2)
+st.dataframe(df)
 
 with st.sidebar:
     container = st.container(border=True)
