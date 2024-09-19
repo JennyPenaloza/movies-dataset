@@ -33,19 +33,19 @@ with st.sidebar:
             st.session_state.grid_size +=1
 
     st.write("Select a Height:")
-    row_height = st.columns([1, 2, 1])
-    with row_height[0]:
-        if st.sidebar.button('➖', key="decrease_width"):
+    col_height = st.columns([1, 2, 1])
+    with col_height[0]:
+        if st.sidebar.button('➖', key="decrease_height"):
             if st.session_state.grid_height > 1:
                 st.session_state.grid_height -= 1    
 
-    with col_width[1]:
+    with col_height[1]:
         st.write(f"{st.session_state.grid_height}")
-    with col_width[2]:
+    with col_height[2]:
         if st.sidebar.button('➕', key="increase_width"):
             st.session_state.grid_size +=1
-st.sidebar.write(f"Grid Size: {st.session_state.grid_size}")
-
+            
+    submit = st.button("Submit")
 
 # Load the data from a CSV. We're caching this so it doesn't reload every time the app
 # reruns (e.g. if the user interacts with the widgets).
