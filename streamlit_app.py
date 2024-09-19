@@ -47,9 +47,9 @@ with st.sidebar:
 
 if submit:
     init_data = np.random.rand(st.session_state.grid_height, st.session_state.grid_width)
-    st.session_state.init_data = init_data
     df = pd.DataFrame(init_data, columns=[f"{i}" for i in range(st.session_state.grid_width)])
     st.session_state.dataframe = np.round(df, decimals=2)
+    st.session_state.init_data = init_data
 
 
 st.data_editor(st.session_state.dataframe)
