@@ -49,6 +49,6 @@ st.data_editor(st.session_state.dataframe)
 display = st.button("Display")
 
 if display:
-    st.area_chart(st.session_state.dataframe)
+    st.pyplot(st.session_state.dataframe)
 
 
