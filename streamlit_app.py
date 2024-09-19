@@ -1,7 +1,8 @@
 import pandas as pd
 import numpy as np
 import streamlit as st
-#import matplotlib.pyplot as plt
+pip install matplotlib
+import matplotlib.pyplot as plt
 
 
 if st.__version__ != '1.29.0':
