@@ -62,7 +62,7 @@ if display:
 
     if init_data is not None:
 
-        figure = plt.figure()
+        figure = plt.figure(figsize = (4, 4))
         figure.set_figwidth(4)
         figure.set_figheight(4)
         axes = figure.add_subplot(1, 1, 1)
