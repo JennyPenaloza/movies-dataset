@@ -1,7 +1,6 @@
 import pandas as pd
 import numpy as np
 import streamlit as st
-import matplotlib.pyplot as plt
 
 # Show the page title and description.
 st.title("Self Check 4")
@@ -51,6 +50,5 @@ display = st.button("Display")
 
 if display:
     df.plot()
-    plt.title("Camera View")
 
 
