@@ -57,6 +57,10 @@ if display:
     fig, ax = plt.subplots()
     ax.imshow(st.session_state.dataframe, cmap='gray')
     ax.set_title("Camera View")
+
+    ax.set_xticks(range(st.session_state.dataframe.shape[1]))
+    ax.set_yticks(range(st.session_state.dataframe.shape[0]))
+
     st.pyplot(fig)
 
 
