@@ -74,7 +74,7 @@ if display:
 
         axes.set_xticks(np.arange(0, st.session_state.grid_width, 2))
         axes.set_yticks(np.arange(0, st.session_state.grid_height, 2))
-
+        plt.tight_layout(pad=0.5)
 
         #st.pyplot(figure)
         figure.savefig("data_grid.png")
