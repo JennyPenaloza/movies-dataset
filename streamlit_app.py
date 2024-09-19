@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 import matplotlib.pyplot as plt
+from PIL import image
 
 
 if st.__version__ != '1.29.0':
@@ -62,7 +63,7 @@ if display:
 
     if init_data is not None:
 
-        figure = plt.figure(figsize = (4, 4), dpi=400)
+        figure = plt.figure(figsize = (4, 4))
         figure.set_figwidth(4)
         figure.set_figheight(4)
         axes = figure.add_subplot(1, 1, 1)
@@ -76,8 +77,11 @@ if display:
         axes.set_xticks(np.arange(0, st.session_state.grid_width, 2))
         axes.set_yticks(np.arange(0, st.session_state.grid_height, 2))
 
-        plt.tight_layout(pad=0.5)
-        st.pyplot(figure)
+
+        #st.pyplot(figure)
+        figure.savefige("data_grid.png")
+        data_grid = Image.open('data_grid.png')
+        st.image(data_grid)
 
     else:
         st.error("Please press submit before attempting to display data.")
