@@ -32,7 +32,18 @@ with st.sidebar:
         if st.sidebar.button('➕', key="increase_width"):
             st.session_state.grid_size +=1
 
+    st.write("Select a Height:")
+    row_height = st.columns([1, 2, 1])
+    with row_height[0]:
+        if st.sidebar.button('➖', key="decrease_width"):
+            if st.session_state.grid_height > 1:
+                st.session_state.grid_height -= 1    
 
+    with col_width[1]:
+        st.write(f"{st.session_state.grid_height}")
+    with col_width[2]:
+        if st.sidebar.button('➕', key="increase_width"):
+            st.session_state.grid_size +=1
 st.sidebar.write(f"Grid Size: {st.session_state.grid_size}")
 
 
