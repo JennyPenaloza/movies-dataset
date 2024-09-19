@@ -1,4 +1,4 @@
-dimport pandas as pd
+import pandas as pd
 import numpy as np
 import streamlit as st
 
@@ -6,7 +6,7 @@ import streamlit as st
 st.title("Self Check 4")
 st.header(
     """
-    ###Edit the camera view
+    Edit the camera view
     """
 )
 
