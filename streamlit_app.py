@@ -6,7 +6,7 @@ import streamlit as st
 st.title("Self Check 4")
 st.write(
     """
-    Edit the camera view
+    ###Edit the camera view
     """
 )
 
