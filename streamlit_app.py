@@ -69,12 +69,14 @@ if display:
 
         pixels = np.array([255 - p * 255 for p in init_data], dtype='uint8')
         pixels = pixels.reshape((st.session_state.grid_height, st.session_state.grid_width))
+
         axes.set_title( "Camera View")
         axes.imshow(pixels, cmap='gray')
 
         axes.set_xticks(np.arange(0, st.session_state.grid_width, 2))
         axes.set_yticks(np.arange(0, st.session_state.grid_height, 2))
 
+        plt.tight_layout(pad=0.5)
         st.pyplot(figure)
 
     else:
