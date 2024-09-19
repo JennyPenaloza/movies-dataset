@@ -70,6 +70,9 @@ if display:
         axes.set_title( "Camera View")
         axes.imshow(pixels, cmap='gray')
 
+        axes.set_xticks(np.arange(0, st.session_state.grid_width, 2))
+        axes.set_yticks(np.arange(0, st.session_state.grid_height, 2))
+
         st.pyplot(figure)
 
     else:
