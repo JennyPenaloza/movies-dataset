@@ -30,7 +30,7 @@ with st.sidebar:
         container.write("Select a Height:")
         st.session_state.grid_height = container.number_input("", min_value=2, max_value=10, value=2, step=1, key="select_height")
             
-    submit = container.button("Submit", key="submit_button)
+    submit = container.button("Submit", key="submit_button")
 
 
 if submit:
