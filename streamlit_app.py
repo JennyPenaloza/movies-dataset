@@ -79,7 +79,7 @@ if display:
 
 
         #st.pyplot(figure)
-        figure.savefig1("data_grid.png")
+        figure.savefig("data_grid.png")
         data_grid = Image.open('data_grid.png')
         st.image(data_grid)
 
