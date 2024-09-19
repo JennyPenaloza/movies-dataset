@@ -68,7 +68,6 @@ if display:
         axes.imshow(pixels, cmap='gray')
 
         st.pyplot(figure)
-        plt.close()
 
     else:
         st.error("HELLO")
