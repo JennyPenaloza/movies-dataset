@@ -63,8 +63,8 @@ if display:
     if init_data is not None:
 
         figure = plt.figure()
-        figure.set_figwidth(4)
-        figure.set_figheight(4)
+        figure.set_figwidth(2)
+        figure.set_figheight(2)
         axes = figure.add_subplot(1, 1, 1)
 
         pixels = np.array([255 - p * 255 for p in init_data], dtype='uint8')
