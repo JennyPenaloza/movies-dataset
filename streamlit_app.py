@@ -28,7 +28,7 @@ with st.sidebar:
                 st.session_state.grid_width -= 1    
 
     with col_width[1]:
-        st.text_input("", value=st.session_state.grid_width, key="width_display")
+        st.session_state.grid_width = st.text_input("", value=st.session_state.grid_width, key="width_display", disabled=True)
         
     with col_width[2]:
         if st.sidebar.button('➕', key="increase_width"):
@@ -42,7 +42,8 @@ with st.sidebar:
                 st.session_state.grid_height -= 1    
 
     with col_height[1]:
-        st.write(f"{st.session_state.grid_height}")
+        st.text_input("", value=st.session_state.grid_height, key="height_display", disabled=True)
+        
     with col_height[2]:
         if st.sidebar.button('➕', key="increase_height"):
             st.session_state.grid_height +=1
