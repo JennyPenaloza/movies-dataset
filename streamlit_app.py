@@ -76,10 +76,10 @@ if display:
         axes.set_yticks(np.arange(0, st.session_state.grid_height, 2))
         plt.tight_layout(pad=0.5)
 
-        #st.pyplot(figure)
-        figure.savefig("data_grid.png")
-        data_grid = Image.open('data_grid.png')
-        st.image(data_grid)
+        st.pyplot(figure)
+        #figure.savefig("data_grid.png")
+        #data_grid = Image.open('data_grid.png')
+        #st.image(data_grid)
 
     else:
         st.error("Please press submit before attempting to display data.")
