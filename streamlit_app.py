@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import streamlit as st
+import matplotlib.pyplot as pls
 
 # Show the page title and description.
 st.title("Self Check 4")
@@ -49,6 +50,9 @@ st.data_editor(st.session_state.dataframe)
 display = st.button("Display")
 
 if display:
-    st.pyplot(st.session_state.dataframe)
+    fig, ax = plt.subplots()
+    ax.imshow(st.session_state.dataframe, cmkap='gray')
+    ax.set_title("Camera View")
+    st.pyplot(fig)
 
 
