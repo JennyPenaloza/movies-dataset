@@ -1,10 +1,10 @@
-import pandas as pd
+dimport pandas as pd
 import numpy as np
 import streamlit as st
 
 # Show the page title and description.
 st.title("Self Check 4")
-st.write(
+st.header(
     """
     ###Edit the camera view
     """
