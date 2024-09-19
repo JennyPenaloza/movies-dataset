@@ -64,7 +64,7 @@ display = st.button("Display")
 
 if display:
 
-    updated_data = st..session-state.dataframe.values
+    updated_data = st.session-state.dataframe.values
 
     if updated_data is not None:
 
