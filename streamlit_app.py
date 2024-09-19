@@ -53,6 +53,7 @@ if submit:
     init_data = np.random.rand(st.session_state.grid_height, st.session_state.grid_width)
     df = pd.DataFrame(init_data, columns=[f"Col {i}" for i in range(st.session_state.grid_width)])
     np.round(df, decimals=2)
+    st.dataframe(df)
 
 st.button("Display")
 
