@@ -22,7 +22,6 @@ if 'grid_width' not in st.session_state:
 if 'grid_height' not in st.session_state:
     st.session_state.grid_height = 4
 
-
 # Initialize dataframe when starting up page using initial grid height and width
 # Populate with random data
 if 'dataframe' not in st.session_state:
@@ -30,8 +29,6 @@ if 'dataframe' not in st.session_state:
     df = pd.DataFrame(init_data, columns=[f"{i}" for i in range(st.session_state.grid_width)])
     st.session_state.dataframe = np.round(df, decimals=2)
     st.session_state.init_data = init_data
-
-
 
 with st.sidebar:
     container = st.container(border=True)   #Unify all values in sidebar
@@ -45,13 +42,12 @@ with st.sidebar:
             
     submit = container.button("Submit", key="submit_button")
 
-
+# Display randomized data based on user input for table height and width
 if submit:
     init_data = np.random.rand(st.session_state.grid_height, st.session_state.grid_width)
     df = pd.DataFrame(init_data, columns=[f"{i}" for i in range(st.session_state.grid_width)])
     st.session_state.dataframe = np.round(df, decimals=2)
     st.session_state.init_data = init_data
-
 
 # Make data editable and reflect on display
 st.session_state.dataframe = st.data_editor(st.session_state.dataframe)
