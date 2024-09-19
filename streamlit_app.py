@@ -54,14 +54,13 @@ st.data_editor(st.session_state.dataframe)
 display = st.button("Display")
 
 if display:
-    fig, ax = plt.subplots()
-    ax.imshow(st.session_state.dataframe, cmap='gray')
-    ax.set_title("Camera View")
-
-    ax.set_xticks(range(0, st.session_state.dataframe.shape[1], 2))
-    ax.set_yticks(range(0, st.session_state.dataframe.shape[0], 2))
-
-    plt.tight_layout()
-    st.pyplot(fig)
+    figure = plt.figure(figsize=(4,4))
+    axes = figure.add_subplot(1, 1, 1)
+    pixels = np.array([255 - p * 255 for p in init_data[:-1]], dtype='uint8')
+    pixels = pixels.reshape((4, 4))
+    axes.set_title( "Left Camera:" + data[-1])
+    axes.imshow(pixels, cmap='gray')
+    plt.show()
+    plt.close()
 
 
