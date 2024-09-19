@@ -10,7 +10,18 @@ st.write(
     """
 )
 
-st.sidebar()
+if 'grid_size' not in st.session_state:
+    st.session_state.grid_size = 3
+
+st.sidebar.title("Grid Size")
+
+if st.sidebar.button('+'):
+    st.session_state.grid_size +=1
+if st.sidebar.button('-'):
+    if st.session_state.grid_size > 1:
+        st.session_state.grid_size -= 1
+
+st.sidebar.write(f"Grid Size: {st.session_state.grid_size}")
 
 
 # Load the data from a CSV. We're caching this so it doesn't reload every time the app
