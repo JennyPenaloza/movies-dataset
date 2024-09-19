@@ -55,7 +55,7 @@ display = st.button("Display")
 
 if display:
     fig, ax = plt.subplots()
-    ax.imshow(st.session_state.dataframe, cmkap='gray')
+    ax.imshow(st.session_state.dataframe, cmap='gray')
     ax.set_title("Camera View")
     st.pyplot(fig)
 
