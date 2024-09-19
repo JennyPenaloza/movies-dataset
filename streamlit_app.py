@@ -35,7 +35,7 @@ with st.sidebar:
     col1, col2 = container.columns(2)
 
     with col1:
-        container.text("Select a Width:")
+        container.write("Select a Width:")
         st.session_state.grid_width = container.number_input("Select a Width", min_value=2, max_value=10, value=4, step=1, key="select_width", label_visibility="collapsed")
 
     with col2:
@@ -65,7 +65,7 @@ if display:
         figure = plt.figure(figsize=(4,4))
         axes = figure.add_subplot(1, 1, 1)
 
-        pixels = np.array([255 - p * 255 for p in init_data], dtype='uint8')
+        pixels = np.array([1 - p for p in init_data], dtype='uint8')
         pixels = pixels.reshape((st.session_state.grid_height, st.session_state.grid_width))
         axes.set_title( "Camera View")
         axes.imshow(pixels, cmap='gray')
