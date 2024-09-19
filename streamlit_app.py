@@ -1,4 +1,4 @@
-import pandas as pd
+ctimport pandas as pd
 import numpy as np
 import streamlit as st
 
@@ -20,10 +20,10 @@ with st.sidebar:
     st.title("Grid Size")
 
     st.write("Select a Width:")
-    st.session_state.grid_width = st.number_input("", min_value=0, max_value=50, value=1, step=1, key="grid_width")
+    st.session_state.grid_width = st.number_input("", min_value=0, max_value=50, value=1, step=1, key="select_width")
  
     st.write("Select a Height:")
-    st.session_state.grid_height = st.number_input("", min_value=0, max_value=50, value=1, step=1, key="grid_height")
+    st.session_state.grid_height = st.number_input("", min_value=0, max_value=50, value=1, step=1, key="select_height")
             
     submit = st.button("Submit")
 
