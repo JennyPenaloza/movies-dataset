@@ -29,7 +29,7 @@ with st.sidebar:
     with col_width[1]:
         st.write(f"{st.session_state.grid_width}")
     with col_width[2]:
-        if st.sidebar.button('+', key='increase_width"):
+        if st.sidebar.button('+', key="increase_width"):
             st.session_state.grid_size +=1
 
 
