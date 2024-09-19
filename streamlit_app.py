@@ -61,6 +61,7 @@ if display:
     ax.set_xticks(range(0, st.session_state.dataframe.shape[1], 2))
     ax.set_yticks(range(0, st.session_state.dataframe.shape[0], 2))
 
+    plt.tight_layout()
     st.pyplot(fig)
 
 
