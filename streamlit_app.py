@@ -1,6 +1,8 @@
+pip install streamlit==1.29.0
+
 import pandas as pd
 import numpy as np
-import streamlit==1.29 as st
+import streamlit as st
 import matplotlib.pyplot as plt
 
 # Show the page title and description.
