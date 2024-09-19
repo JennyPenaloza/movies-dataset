@@ -21,10 +21,10 @@ with st.sidebar:
     container.title("Grid Size")
 
     container.write("Select a Width:")
-    container.session_state.grid_width = st.number_input("", min_value=2, max_value=10, value=2, step=1, key="select_width")
+    session_state.grid_width = container.number_input("", min_value=2, max_value=10, value=2, step=1, key="select_width")
  
     container.write("Select a Height:")
-    container.session_state.grid_height = st.number_input("", min_value=2, max_value=10, value=2, step=1, key="select_height")
+    session_state.grid_height = container.number_input("", min_value=2, max_value=10, value=2, step=1, key="select_height")
             
     submit = container.button("Submit")
 
