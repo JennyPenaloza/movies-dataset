@@ -58,8 +58,8 @@ if display:
     ax.imshow(st.session_state.dataframe, cmap='gray')
     ax.set_title("Camera View")
 
-    ax.set_xticks(range(st.session_state.dataframe.shape[1], 2))
-    ax.set_yticks(range(st.session_state.dataframe.shape[0], 2))
+    ax.set_xticks(range(0, st.session_state.dataframe.shape[1], 2))
+    ax.set_yticks(range(0, st.session_state.dataframe.shape[0], 2))
 
     st.pyplot(fig)
 
