@@ -2,9 +2,9 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 import matplotlib.pyplot as plt
-from PIL import Image
 
 
+# Sanity check for streamlit version
 if st.__version__ != '1.29.0':
     st.warning(f"Warning: Streamlit version is {st.__version__}")
 
@@ -16,12 +16,15 @@ st.header(
     """
 )
 
+# Create initial grid height and width
 if 'grid_width' not in st.session_state:
     st.session_state.grid_width = 4
 if 'grid_height' not in st.session_state:
     st.session_state.grid_height = 4
 
 
+# Initialize dataframe when starting up page using initial grid height and width
+# Populate with random data
 if 'dataframe' not in st.session_state:
     init_data = np.random.rand(st.session_state.grid_height, st.session_state.grid_width)
     df = pd.DataFrame(init_data, columns=[f"{i}" for i in range(st.session_state.grid_width)])
@@ -29,19 +32,17 @@ if 'dataframe' not in st.session_state:
     st.session_state.init_data = init_data
 
 
+
 with st.sidebar:
-    container = st.container(border=True)
+    container = st.container(border=True)   #Unify all values in sidebar
     container.header("Grid Size")
 
-    col1, col2 = container.columns(2)
 
-    with col1:
-        container.write("Select a Width:")
-        st.session_state.grid_width = container.number_input("Select a Width", min_value=2, max_value=10, value=4, step=1, key="select_width", label_visibility="collapsed")
+    container.write("Select a Width:")
+    st.session_state.grid_width = container.number_input("Select a Width", min_value=2, max_value=10, value=4, step=1, key="select_width", label_visibility="collapsed")
 
-    with col2:
-        container.write("Select a Height:")
-        st.session_state.grid_height = container.number_input("Select a Height", min_value=2, max_value=10, value=4, step=1, key="select_height", label_visibility="collapsed")
+    container.write("Select a Height:")
+    st.session_state.grid_height = container.number_input("Select a Height", min_value=2, max_value=10, value=4, step=1, key="select_height", label_visibility="collapsed")
             
     submit = container.button("Submit", key="submit_button")
 
