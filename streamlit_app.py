@@ -28,11 +28,6 @@ if 'dataframe' not in st.session_state:
     st.session_state.dataframe = np.round(df, decimals=2)
     st.session_state.init_data = init_data
 
-edited_df = st.data_editor(st.session_state.dataframe)
-
-if edited_df is not None:
-    st.session_state.dataframe = edited_df
-
 
 with st.sidebar:
     container = st.container(border=True)
@@ -58,20 +53,21 @@ if submit:
     st.session_state.init_data = init_data
 
 
-st.data_editor(st.session_state.dataframe)
+st.session_state.dataframe = st.data_editor(st.session_state.dataframe)
+st.session_state.init_data = st.session_state.dataframe.values
 
 display = st.button("Display")
 
 if display:
 
-    updated_data = st.session-state.dataframe.values
+    init_data = st.session_state.get('init_data')
 
-    if updated_data is not None:
+    if init_data is not None:
 
         figure = plt.figure(figsize = (4, 4))
         axes = figure.add_subplot(1, 1, 1)
 
-        pixels = np.array([255 - p * 255 for p in init_dupdated_dataata], dtype='uint8')
+        pixels = np.array([255 - p * 255 for p in init_data], dtype='uint8')
         pixels = pixels.reshape((st.session_state.grid_height, st.session_state.grid_width))
 
         axes.set_title( "Camera View")
@@ -82,6 +78,7 @@ if display:
         plt.tight_layout(pad=0.5)
 
         st.pyplot(figure)
+
 
     else:
         st.error("Please press submit before attempting to display data.")
