@@ -53,6 +53,7 @@ if submit:
     st.session_state.init_data = init_data
 
 
+# Make data editable and reflect on display
 st.session_state.dataframe = st.data_editor(st.session_state.dataframe)
 st.session_state.init_data = st.session_state.dataframe.values
 
@@ -62,6 +63,7 @@ if display:
 
     init_data = st.session_state.get('init_data')
 
+    # Plotting based off module 2
     if init_data is not None:
 
         figure = plt.figure(figsize = (4, 4))
@@ -75,11 +77,10 @@ if display:
 
         axes.set_xticks(np.arange(0, st.session_state.grid_width, 2))
         axes.set_yticks(np.arange(0, st.session_state.grid_height, 2))
-        plt.tight_layout(pad=0.5)
 
         st.pyplot(figure)
 
-
+    # Debugging check if data processed
     else:
         st.error("Please press submit before attempting to display data.")
 
