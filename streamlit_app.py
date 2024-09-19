@@ -37,12 +37,15 @@ with st.sidebar:
     container = st.container(border=True)   #Unify all values in sidebar
     container.header("Grid Size")
 
+    col1, col2 = container.columns(2)
 
-    container.write("Select a Width:")
-    st.session_state.grid_width = container.number_input("Select a Width", min_value=2, max_value=10, value=4, step=1, key="select_width", label_visibility="collapsed")
+    with col1:
+        container.write("Select a Width:")
+        st.session_state.grid_width = container.number_input("Select a Width", min_value=2, max_value=10, value=4, step=1, key="select_width", label_visibility="collapsed")
 
-    container.write("Select a Height:")
-    st.session_state.grid_height = container.number_input("Select a Height", min_value=2, max_value=10, value=4, step=1, key="select_height", label_visibility="collapsed")
+    with col2:
+        container.write("Select a Height:")
+        st.session_state.grid_height = container.number_input("Select a Height", min_value=2, max_value=10, value=4, step=1, key="select_height", label_visibility="collapsed")
             
     submit = container.button("Submit", key="submit_button")
 
