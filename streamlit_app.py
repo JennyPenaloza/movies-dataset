@@ -30,7 +30,7 @@ if 'dataframe' not in st.session_state:
 
 with st.sidebar:
     container = st.container(border=True)
-    container.title("Grid Size")
+    container.header("Grid Size")
 
     col1, col2 = container.columns(2)
 
