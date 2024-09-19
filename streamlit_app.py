@@ -47,6 +47,13 @@ with st.sidebar:
             
     submit = st.button("Submit")
 
+
+if submit:
+    for row in range(st.session_state.grid_height):
+        cols = st.columns(st.session_state.grid_width)
+        for col in cols:
+            col.write{f"{row}, {col}")
+
 # Load the data from a CSV. We're caching this so it doesn't reload every time the app
 # reruns (e.g. if the user interacts with the widgets).
 @st.cache_data
