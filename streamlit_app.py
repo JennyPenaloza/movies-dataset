@@ -21,32 +21,10 @@ with st.sidebar:
     st.title("Grid Size")
 
     st.write("Select a Width:")
-    col_width = st.columns([1, 2, 1])
-    with col_width[0]:
-        if st.sidebar.button('➖', key="decrease_width"):
-            if st.session_state.grid_width > 1:
-                st.session_state.grid_width -= 1    
-
-    with col_width[1]:
-        st.session_state.grid_width = st.number_input("", min_value=0, max_value=50, value=1, step=1)
-        
-    with col_width[2]:
-        if st.sidebar.button('➕', key="increase_width"):
-            st.session_state.grid_width +=1
-
+    st.session_state.grid_width = st.number_input("", min_value=0, max_value=50, value=1, step=1)
+ 
     st.write("Select a Height:")
-    col_height = st.columns([1, 2, 1])
-    with col_height[0]:
-        if st.sidebar.button('➖', key="decrease_height"):
-            if st.session_state.grid_height > 1:
-                st.session_state.grid_height -= 1    
-
-    with col_height[1]:
-        st.text_input("", value=st.session_state.grid_height, key="height_display", disabled=True)
-        
-    with col_height[2]:
-        if st.sidebar.button('➕', key="increase_height"):
-            st.session_state.grid_height +=1
+    st.session_state.grid_height = st.number_input("", min_value=0, max_value=50, value=1, step=1)
             
     submit = st.button("Submit")
 
