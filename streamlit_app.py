@@ -18,10 +18,6 @@ if 'grid_height' not in st.session_state:
 
 st.session_state.dataframe = st.data_editor(st.session_state.dataframe)
 
-if 'dataframe' not in st.session_state:
-    init_data = np.random.rand(st.session_state.grid_height, st.session_state.grid_width)
-    df = pd.DataFrame(init_data, columns=[f"{i}" for i in range(st.session_state.grid_width)])
-    st.session_state.dataframe = np.round(df, decimals=2)
 
 with st.sidebar:
     container = st.container(border=True)
