@@ -61,11 +61,13 @@ if display:
 
         figure = plt.figure(figsize=(4,4))
         axes = figure.add_subplot(1, 1, 1)
-        pixels = np.array([255 - p * 255 for p in init_data[:-1]], dtype='uint8')
-        pixels = pixels.reshape((4, 4))
+
+        pixels = np.array([255 - p * 255 for p in init_data], dtype='uint8')
+        pixels = pixels.reshape((st.session_state.grid_height, st.session_state.grid_width))
         axes.set_title( "Camera View")
         axes.imshow(pixels, cmap='gray')
-        plt.show()
+
+        st.pyplot(figure)
         plt.close()
 
     else:
