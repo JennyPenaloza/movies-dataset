@@ -49,10 +49,12 @@ with st.sidebar:
 
 
 if submit:
-    for row in range(st.session_state.grid_height):
-        cols = st.columns(st.session_state.grid_width)
-        for col in cols:
-            col.write(f"{row}, {col}")
+
+    starting_data = np.zeros(st.session_state.grid_height, st.session_state.grid_width)
+    df = pd.DataFrame(starting_data, columns=[f"Col {i}" for i in range(st.session_state.grid_width)])
+    np.round(df, decimals=2)
+
+st.button("Display")
 
 # Load the data from a CSV. We're caching this so it doesn't reload every time the app
 # reruns (e.g. if the user interacts with the widgets).
@@ -89,18 +91,4 @@ st.dataframe(
     column_config={"year": st.column_config.TextColumn("Year")},
 )
 
-# Display the data as an Altair chart using `st.altair_chart`.
-df_chart = pd.melt(
-    df_reshaped.reset_index(), id_vars="year", var_name="genre", value_name="gross"
-)
-chart = (
-    alt.Chart(df_chart)
-    .mark_line()
-    .encode(
-        x=alt.X("year:N", title="Year"),
-        y=alt.Y("gross:Q", title="Gross earnings ($)"),
-        color="genre:N",
-    )
-    .properties(height=320)
-)
-st.altair_chart(chart, use_container_width=True)
+
