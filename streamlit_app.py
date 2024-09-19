@@ -42,7 +42,7 @@ if submit:
     df = pd.DataFrame(init_data, columns=[f"{i}" for i in range(st.session_state.grid_width)])
     st.session_state.dataframe = np.round(df, decimals=2)
 
-st.session_state.dataframe = st.experimental_data_editor(st.session_state.dataframe)
+st.session_state.dataframe = st.data_editor(st.session_state.dataframe)
 st.dataframe(st.session_state.dataframe)
 
 st.button("Display")
