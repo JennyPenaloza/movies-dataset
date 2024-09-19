@@ -30,7 +30,7 @@ with st.sidebar:
         st.write(f"{st.session_state.grid_width}")
     with col_width[2]:
         if st.sidebar.button('➕', key="increase_width"):
-            st.session_state.grid_size +=1
+            st.session_state.grid_width +=1
 
     st.write("Select a Height:")
     col_height = st.columns([1, 2, 1])
@@ -43,7 +43,7 @@ with st.sidebar:
         st.write(f"{st.session_state.grid_height}")
     with col_height[2]:
         if st.sidebar.button('➕', key="increase_height"):
-            st.session_state.grid_size +=1
+            st.session_state.grid_height +=1
             
     submit = st.button("Submit")
 
