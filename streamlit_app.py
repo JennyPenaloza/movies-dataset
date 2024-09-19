@@ -50,8 +50,7 @@ with st.sidebar:
 
 if submit:
 
-    starting_data = np.zeros(st.session_state.grid_height, st.session_state.grid_width)
-    df = pd.DataFrame(starting_data, columns=[f"Col {i}" for i in range(st.session_state.grid_width)])
+    df = pd.DataFrame(0.00, columns=[f"Col {i}" for i in range(st.session_state.grid_width)])
     np.round(df, decimals=2)
 
 st.button("Display")
