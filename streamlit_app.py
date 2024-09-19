@@ -17,15 +17,16 @@ if 'grid_height' not in st.session_state:
     
 
 with st.sidebar:
-    st.title("Grid Size")
+    container = st.container(border=True)
+    container.title("Grid Size")
 
-    st.write("Select a Width:")
-    st.session_state.grid_width = st.number_input("", min_value=2, max_value=10, value=1, step=1, key="select_width")
+    container.write("Select a Width:")
+    container.session_state.grid_width = st.number_input("", min_value=2, max_value=10, value=1, step=1, key="select_width")
  
-    st.write("Select a Height:")
-    st.session_state.grid_height = st.number_input("", min_value=2, max_value=10, value=1, step=1, key="select_height")
+    container.write("Select a Height:")
+    container.session_state.grid_height = st.number_input("", min_value=2, max_value=10, value=1, step=1, key="select_height")
             
-    submit = st.button("Submit")
+    submit = container.button("Submit")
 
 
 if submit:
