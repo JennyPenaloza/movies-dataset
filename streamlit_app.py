@@ -35,8 +35,8 @@ with st.sidebar:
     col1, col2 = container.columns(2)
 
     with col1:
-        container.write("Select a Width:")
-        st.session_state.grid_width = container.number_input("", min_value=2, max_value=10, value=4, step=1, key="select_width", label_visibility="collapsed")
+        #container.write("Select a Width:")
+        st.session_state.grid_width = container.number_input("Width", min_value=2, max_value=10, value=4, step=1, key="select_width", label_visibility="collapsed")
 
     with col2:
         container.write("Select a Height:")
