@@ -35,8 +35,9 @@ with st.sidebar:
 if submit:
     init_data = np.random.rand(st.session_state.grid_height, st.session_state.grid_width)
     df = pd.DataFrame(init_data, columns=[f"{i}" for i in range(st.session_state.grid_width)])
-    np.round(df, decimals=2)
-    st.dataframe(df)
+    st.session_state.dataframe = np.round(df, decimals=2)
+
+st.dataframe(st.session_state.dataframe)
 
 st.button("Display")
 
