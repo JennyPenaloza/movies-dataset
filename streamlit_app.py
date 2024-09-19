@@ -20,13 +20,17 @@ with st.sidebar:
     container = st.container(border=True)
     container.title("Grid Size")
 
-    container.write("Select a Width:")
-    st.session_state.grid_width = container.number_input("", min_value=2, max_value=10, value=2, step=1, key="select_width")
- 
-    container.write("Select a Height:")
-    st.session_state.grid_height = container.number_input("", min_value=2, max_value=10, value=2, step=1, key="select_height")
+    col1, col2 = container.columns(2)
+
+    with col1:
+        container.write("Select a Width:")
+        st.session_state.grid_width = container.number_input("", min_value=2, max_value=10, value=2, step=1, key="select_width")
+
+    with col2:
+        container.write("Select a Height:")
+        st.session_state.grid_height = container.number_input("", min_value=2, max_value=10, value=2, step=1, key="select_height")
             
-    submit = container.button("Submit")
+    submit = container.button("Submit", key="submit_button)
 
 
 if submit:
