@@ -11,19 +11,19 @@ st.write(
 )
 
 if 'grid_width' not in st.session_state:
-    st.session_state.grid_width = 3
+    st.session_state.grid_width = 4
 if 'grid_height' not in st.session_state:
-    st.session_state.grid_height = 3
+    st.session_state.grid_height = 4
     
 
 with st.sidebar:
     st.title("Grid Size")
 
     st.write("Select a Width:")
-    st.session_state.grid_width = st.number_input("", min_value=0, max_value=50, value=1, step=1, key="select_width")
+    st.session_state.grid_width = st.number_input("", min_value=2, max_value=10, value=1, step=1, key="select_width")
  
     st.write("Select a Height:")
-    st.session_state.grid_height = st.number_input("", min_value=0, max_value=50, value=1, step=1, key="select_height")
+    st.session_state.grid_height = st.number_input("", min_value=2, max_value=10, value=1, step=1, key="select_height")
             
     submit = st.button("Submit")
 
