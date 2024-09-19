@@ -16,6 +16,7 @@ if 'grid_height' not in st.session_state:
     st.session_state.grid_height = 4
 
 if 'dataframe' not in st.session_state:
+    st.session_state.dataframe = st.data_editor(st.session_state.dataframe)
     init_data = np.random.rand(st.session_state.grid_height, st.session_state.grid_width)
     df = pd.DataFrame(init_data, columns=[f"{i}" for i in range(st.session_state.grid_width)])
     st.session_state.dataframe = np.round(df, decimals=2)
@@ -42,7 +43,6 @@ if submit:
     df = pd.DataFrame(init_data, columns=[f"{i}" for i in range(st.session_state.grid_width)])
     st.session_state.dataframe = np.round(df, decimals=2)
 
-st.session_state.dataframe = st.data_editor(st.session_state.dataframe)
 st.dataframe(st.session_state.dataframe)
 
 st.button("Display")
