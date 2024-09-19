@@ -54,13 +54,18 @@ st.data_editor(st.session_state.dataframe)
 display = st.button("Display")
 
 if display:
-    figure = plt.figure(figsize=(4,4))
-    axes = figure.add_subplot(1, 1, 1)
-    pixels = np.array([255 - p * 255 for p in init_data[:-1]], dtype='uint8')
-    pixels = pixels.reshape((4, 4))
-    axes.set_title( "Left Camera:" + data[-1])
-    axes.imshow(pixels, cmap='gray')
-    plt.show()
-    plt.close()
+
+    init_data = st.session_state.get('init_data')
+
+    if init_data is not None:
+
+        figure = plt.figure(figsize=(4,4))
+        axes = figure.add_subplot(1, 1, 1)
+        pixels = np.array([255 - p * 255 for p in init_data[:-1]], dtype='uint8')
+        pixels = pixels.reshape((4, 4))
+        axes.set_title( "Camera View")
+        axes.imshow(pixels, cmap='gray')
+        plt.show()
+        plt.close()
 
 
