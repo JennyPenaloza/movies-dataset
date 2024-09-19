@@ -73,5 +73,5 @@ if display:
         st.pyplot(figure)
 
     else:
-        st.error("HELLO")
+        st.error("Please press submit before attempting to display data.")
 
