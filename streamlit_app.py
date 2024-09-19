@@ -22,7 +22,7 @@ with st.sidebar:
     st.write("Select a Width:")
     col_width = st.columns([1, 1, 1])
     with cols_width[0]:
-        if st.sidebar.button('-', key="decrease_width"):):
+        if st.sidebar.button('-', key="decrease_width"):
             if st.session_state.grid_width > 1:
                 st.session_state.grid_width -= 1    
 
