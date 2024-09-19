@@ -68,4 +68,6 @@ if display:
         plt.show()
         plt.close()
 
+    else:
+        st.error("HELLO")
 
